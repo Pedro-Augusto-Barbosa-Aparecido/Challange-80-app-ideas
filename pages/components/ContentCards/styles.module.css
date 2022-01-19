@@ -11,6 +11,8 @@
 
     margin-top: 30px;
 
+    overflow: auto;
+
 }
 
 .button {
@@ -19,7 +21,7 @@
     border: 1px solid var(--bs-success);
     border-radius: 3px;
 
-    background-color: #198435FF;
+    background-color: #188754;
 
     padding: 8px;
 
