@@ -6,17 +6,13 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-import getConfig from "next/config";
-
 export default function ContentCards () {
-    const { publicRuntimeConfig } = getConfig();
-
     const [cards, setCards] = useState([]);
     const [time, setTime] = useState(Date.now());
     let res = useRef();
 
     useEffect(async () => {
-        res.current = await axios.get(`https://challange-80-app-ideas.vercel.app/api/cards-api`);
+        res.current = await axios.get(`${window.location.href}/api/cards-api`);
         setCards(res.current.data.data);
         setTime(res.current.data.time);
 
