@@ -23,7 +23,7 @@ export default function ContentCards () {
                             />
                             <p className="card-text">
                                 Binary is the number system all digital computers are based on.
-                                Therefore it's important for developers to understand binary, or base 2, mathematics.
+                                Therefore it&apos;s important for developers to understand binary, or base 2, mathematics.
                                 The purpose of Bin2Dec is to provide practice and understanding
                                 of how binary calculations.
                             </p>
@@ -138,8 +138,8 @@ export default function ContentCards () {
                             <p className="card-text">
                                 In the JSON2CSV application you translated JSON to a comma separated value (CSV) format.
                                 The objective of CSV2JSON is to reverse that process by converting a block of CSV text to JSON.
-                                In CSV2JSON you'll start by copying the JSON2CSV app you created and then modify it to allow
-                                CSV to JSON conversion as well the JSON to CSV conversion that's already present. <br /> <br /> In additional
+                                In CSV2JSON you&apos;ll start by copying the JSON2CSV app you created and then modify it to allow
+                                CSV to JSON conversion as well the JSON to CSV conversion that&apos;s already present. <br /> <br /> In additional
                                 to providing a useful function, this challenge will also give you practice in modifying existing
                                 applications to add new functionality.
                             </p>
@@ -166,7 +166,7 @@ export default function ContentCards () {
                             />
                             <p className="card-text">
                                 Patterns are integral to software engineering and represent potentially reusable
-                                components in program logic. However, patterns aren't used only for program logic,
+                                components in program logic. However, patterns aren&apos;t used only for program logic,
                                 they are exist in other domains such as DevOps, user support, and the user interface.
                                 <br />
                                 <br />
