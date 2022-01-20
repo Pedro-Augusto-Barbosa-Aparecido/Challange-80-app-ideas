@@ -16,7 +16,7 @@ export default function ContentCards () {
     let res = useRef();
 
     useEffect(async () => {
-        res.current = await axios.get(`http://localhost:3000/api/cards-api`);
+        res.current = await axios.get(`https://challange-80-app-ideas-fzo9a8phv.vercel.app/api/cards-api`);
         setCards(res.current.data.data);
         setTime(res.current.data.time);
 
