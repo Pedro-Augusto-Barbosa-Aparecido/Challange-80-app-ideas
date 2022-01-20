@@ -1,21 +1,4 @@
-.grid {
-    width: 90%;
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    justify-content: space-between;
-
-    margin-top: 30px;
-
-    overflow: auto;
-
-}
-
-.button {
+.button, .buttonREADMEProblem {
     text-align: center;
 
     border: 1px solid var(--bs-success);
@@ -30,6 +13,13 @@
     width: 100%;
 
     color: black;
+
+}
+
+.buttonREADMEProblem {
+    background-color: #0070f3;
+
+    margin-left: 20px;
 
 }
 

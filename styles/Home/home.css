@@ -10,6 +10,11 @@
 
 }
 
+.card-text {
+    padding: 10px 0;
+
+}
+
 .row {
     --bs-gutter-x: 0;
 
