@@ -14,6 +14,8 @@
 
     color: black;
 
+    transition: scale .5s;
+
 }
 
 .buttonREADMEProblem {
@@ -23,7 +25,9 @@
 
 }
 
-.button:hover {
+.button:hover, .buttonREADMEProblem:hover {
     color: black !important;
+
+    transform: scale(.8) !important;
 
 }
