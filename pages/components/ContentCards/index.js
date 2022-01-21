@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
-import $ from "jquery";
 
 import axios from "axios";
 
@@ -13,11 +12,17 @@ export default function ContentCards () {
     const [time, setTime] = useState(Date.now());
     let res = useRef();
 
-    useEffect(async () => {
-        res.current = await axios.get(`${window.location.href}/api/cards-api`);
-        setCards(res.current.data.data);
-        setTime(res.current.data.time);
+    useEffect(() => {
+        async function fetchData () {
+            res.current = await axios.get(`${window.location.href}/api/cards-api`);
+            setCards(res.current.data.data);
+            setTime(res.current.data.time);
 
+        }
+
+        fetchData().then(() => {
+
+        });
     }, [res])
 
     return (
