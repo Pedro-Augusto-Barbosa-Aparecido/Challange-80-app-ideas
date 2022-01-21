@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
+import $ from "jquery";
+
 import axios from "axios";
 
 export default function ContentCards () {
