@@ -17,3 +17,67 @@
     left: 4%;
 
 }
+
+.login {
+    display: flex;
+
+    width: 120px;
+
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 1.2rem;
+
+    text-align: center;
+
+}
+
+.login>i {
+    font-size: 2rem;
+
+}
+
+.login>p {
+    margin: 0;
+
+}
+
+.login:hover {
+    cursor: pointer;
+
+}
+
+.menuLogin {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 200px;
+    height: fit-content;
+
+    background-color: #FFF;
+
+    box-shadow: -2px 2px 3px 0 #000;
+
+    position: absolute;
+
+    top: 74px;
+    right: 0;
+
+    z-index: 999999;
+
+}
+
+.menuLogin>a {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+
+    margin-left: 10px;
+
+}
+
+.menuLogin>a>i {
+    margin-right: 15px;
+
+}
