@@ -38,7 +38,7 @@ export default function Login() {
         const _email = ev.target.email.value;
 
         if (emailValidator(_email)) {
-            const res = await axios.post("http://localhost:3000/api/login", {
+            const res = await axios.post(`${window.location.origin}/api/login`, {
                 email: _email,
                 password: _password
 
