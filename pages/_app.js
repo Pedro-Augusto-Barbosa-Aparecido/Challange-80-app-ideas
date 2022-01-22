@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 
         });
 
-    }, []);
+    }, [router]);
 
     return (
       <>

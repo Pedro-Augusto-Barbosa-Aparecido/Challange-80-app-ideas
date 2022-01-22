@@ -46,6 +46,7 @@ export default function Header ({ logged }) {
                                     height={40}
                                     layout={"fixed"}
                                     quality={"100"}
+                                    alt={"Profile Image"}
                                     priority
                                 />
                         }
