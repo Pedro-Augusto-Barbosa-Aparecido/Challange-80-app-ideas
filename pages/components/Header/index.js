@@ -26,16 +26,16 @@ export default function Header () {
                         <p className={"click"}>Sing-in</p>
                         <i className={"bi bi-person-circle click"} />
                         <div className={`${styles.menuLogin}`} id={"menuLogin"} style={{ display }}>
-                            <Link href={"/profile/1"}>
+                            <Link href={"/profile/"}>
                                 <a>
                                     <i className={"bi bi-person-workspace"} />
                                     <p>My profile</p>
                                 </a>
                             </Link>
-                            <Link href={"/logout"}>
+                            <Link href={"/login"}>
                                 <a>
                                     <i className={"bi bi-box-arrow-right"} />
-                                    <p>Logout</p>
+                                    <p>Login</p>
                                 </a>
                             </Link>
                         </div>
