@@ -10,10 +10,23 @@
 
 }
 
+.label {
+    position: absolute;
+
+    top: -13px;
+    left: 15px;
+
+    background-color: #FFF;
+
+    padding: 0 10px;
+
+}
+
 .containerForm {
     display: flex;
 
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -24,18 +37,20 @@
 
     flex-direction: column;
 
-    width: 500px;
+    width: 450px;
 
     margin-bottom: 20px;
+
+    position: relative;
 
 }
 
 .password {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 5px;
 
-    width: 500px;
-    height: 50px;
+    width: 100%;
+    height: 60px;
 
     display: flex;
 
@@ -47,9 +62,9 @@
 }
 
 .containerInput>input[name=email] {
-    height: 50px;
+    height: 60px;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 2px solid #000;
 
 }
 
@@ -72,7 +87,10 @@
 
     width: 100%;
 
-    padding: 5px;
+    font-family: monospace;
+    font-weight: 600;
+
+    padding: 5px 10px;
 
 }
 
@@ -83,6 +101,16 @@
 
     text-align: center;
 
+
+}
+
+.forgotPassword {
+    position: absolute;
+    top: 65px;
+
+    color: #00F;
+
+    font-size: .7rem;
 
 }
 

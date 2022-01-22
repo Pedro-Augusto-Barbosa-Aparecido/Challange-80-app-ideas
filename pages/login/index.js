@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import Link from "next/link";
+
 import $ from "jquery";
 
 import styles from "./styles.module.css";
@@ -32,7 +34,7 @@ export default function Login() {
             <div className={styles.containerForm}>
                 <form id={"login-form"}>
                     <div className={styles.containerInput}>
-                        <label htmlFor={"email"}>E-mail/Phone Number</label>
+                        <label className={styles.label} htmlFor={"email"}>E-mail/Phone Number</label>
                         <input
                             className={styles.input}
                             id={"email"}
@@ -42,7 +44,7 @@ export default function Login() {
                         />
                     </div>
                     <div className={styles.containerInput}>
-                        <label htmlFor={"password"}>Password</label>
+                        <label className={styles.label} htmlFor={"password"}>Password</label>
                         <div className={styles.password}>
                             <input
                                 className={styles.input}
@@ -53,6 +55,9 @@ export default function Login() {
                             />
                             <i onClick={changeTypePassword} className={"bi bi-eye-slash-fill"} />
                         </div>
+                        <Link href={"/forgot-password"}>
+                            <a className={styles.forgotPassword}>Forgot your password?</a>
+                        </Link>
                     </div>
                     <input className={`${styles.button} bg-primary`} type={"submit"} value={"Submit"} />
                 </form>

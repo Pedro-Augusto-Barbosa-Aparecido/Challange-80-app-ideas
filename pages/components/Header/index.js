@@ -27,13 +27,19 @@ export default function Header () {
                         <i className={"bi bi-person-circle click"} />
                         <div className={`${styles.menuLogin}`} id={"menuLogin"} style={{ display }}>
                             <Link href={"/profile/"}>
-                                <a>
+                                <a onClick={() => {
+                                    $("#menuLogin").animate({ height: "toggle" }, 500);
+
+                                }}>
                                     <i className={"bi bi-person-workspace"} />
                                     <p>My profile</p>
                                 </a>
                             </Link>
                             <Link href={"/login"}>
-                                <a>
+                                <a onClick={() => {
+                                    $("#menuLogin").animate({ height: "toggle" }, 500);
+
+                                }}>
                                     <i className={"bi bi-box-arrow-right"} />
                                     <p>Login</p>
                                 </a>
