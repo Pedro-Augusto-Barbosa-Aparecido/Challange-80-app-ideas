@@ -1,19 +1,28 @@
 import styles from "./styles.module.css";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import $ from "jquery";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Header () {
+export default function Header ({ logged }) {
     const [display, setDisplay] = useState("none");
+    const [l, setL] = useState("");
 
     function handleClickLoginContainer (ev) {
         if ($(ev.target).hasClass("click"))
             $("#menuLogin").animate({ height: "toggle" }, 500);
 
     }
+
+    useEffect(() => {
+        setL(localStorage.getItem("logged") ? true : false);
+
+    }, []);
+
+    console.log(l)
 
     return (
         <header>
@@ -23,25 +32,46 @@ export default function Header () {
                         <a className="navbar-brand fs-2 font-monospace" href="#">Home</a>
                     </Link>
                     <div onClick={handleClickLoginContainer} className={`${styles.login} click`}>
-                        <p className={"click"}>Sing-in</p>
-                        <i className={"bi bi-person-circle click"} />
+                        <p className={"click"}>
+                            {
+                                l === false ? "Sing-in" : "Pedro Augusto"
+                            }
+                        </p>
+                        {
+                            l === false ? <i className={"bi bi-person-circle click"} /> :
+                                <Image
+                                    className={`click ${styles.imageLogin}`}
+                                    src={"/assets/login/profile-image/profile.jfif"}
+                                    width={40}
+                                    height={40}
+                                    layout={"fixed"}
+                                    quality={"100"}
+                                    priority
+                                />
+                        }
                         <div className={`${styles.menuLogin}`} id={"menuLogin"} style={{ display }}>
-                            <Link href={"/profile/"}>
-                                <a onClick={() => {
-                                    $("#menuLogin").animate({ height: "toggle" }, 500);
+                            {
+                                l === false ? <></> : <Link href={"/profile/"}>
+                                                            <a onClick={() => {
+                                                                $("#menuLogin").animate({ height: "toggle" }, 500);
 
-                                }}>
-                                    <i className={"bi bi-person-workspace"} />
-                                    <p>My profile</p>
-                                </a>
-                            </Link>
+                                                            }}>
+                                                                <i className={"bi bi-person-workspace"} />
+                                                                <p>My profile</p>
+                                                            </a>
+                                                        </Link>
+                            }
                             <Link href={"/login"}>
                                 <a onClick={() => {
                                     $("#menuLogin").animate({ height: "toggle" }, 500);
 
                                 }}>
                                     <i className={"bi bi-box-arrow-right"} />
-                                    <p>Login</p>
+                                    <p>
+                                        {
+                                            l === false ? "Login" : "Logout"
+                                        }
+                                    </p>
                                 </a>
                             </Link>
                         </div>

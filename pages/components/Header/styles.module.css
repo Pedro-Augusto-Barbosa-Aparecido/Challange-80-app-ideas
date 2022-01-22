@@ -11,6 +11,11 @@
 
 }
 
+.imageLogin {
+    border-radius: 50%;
+
+}
+
 .homeLink {
     position: absolute;
 
@@ -21,7 +26,7 @@
 .login {
     display: flex;
 
-    width: 120px;
+    width: fit-content;
 
     justify-content: space-around;
     align-items: center;
@@ -38,7 +43,7 @@
 }
 
 .login>p {
-    margin: 0;
+    margin: 0 15px 0 0;
 
 }
 

@@ -1,13 +1,16 @@
-import React, {useState} from "react";
-
+import styles from "./styles.module.css";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import $ from "jquery";
+import axios from "axios";
 
-import styles from "./styles.module.css";
+import { emailValidator } from "../../src/utils/validators";
 
 export default function Login() {
     const [password, setPassword] = useState("password");
+    const router = useRouter();
 
     function changeTypePassword (ev) {
         const icon = $(ev.target);
@@ -28,11 +31,48 @@ export default function Login() {
 
     }
 
+    async function handleSubmit (ev) {
+        ev.preventDefault();
+
+        const _password = ev.target.password.value;
+        const _email = ev.target.email.value;
+
+        if (emailValidator(_email)) {
+            const res = await axios.post("http://localhost:3000/api/login", {
+                email: _email,
+                password: _password
+
+            });
+
+            if (!res.data.result)
+                alert("E-mail or password is wrong!!");
+
+            else {
+                localStorage.setItem("logged", true.toString());
+                const event = new CustomEvent("logged", {
+                    isTrusted: true,
+                    detail: {
+                        logged: true
+
+                    },
+
+                });
+
+                document.dispatchEvent(event);
+
+                await router.push("/");
+
+            }
+
+        }
+
+    }
+
     return (
         <main className={styles.container}>
             <h1 className={styles.title}>Login</h1>
             <div className={styles.containerForm}>
-                <form id={"login-form"}>
+                <form onSubmit={handleSubmit} id={"login-form"}>
                     <div className={styles.containerInput}>
                         <label className={styles.label} htmlFor={"email"}>E-mail/Phone Number</label>
                         <input
