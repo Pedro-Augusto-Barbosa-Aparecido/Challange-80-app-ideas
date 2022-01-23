@@ -32,7 +32,7 @@
 .button {
     box-shadow: 1px 1px 5px 0 #000;
 
-    width: 100%;
+    width: 40%;
     height: 50px;
 
     color: #222;
@@ -43,6 +43,14 @@
     background-color: #A383A6;
 
     margin-top: 20px;
+
+}
+
+.containerButton {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -66,8 +74,6 @@
     font-weight: 500;
     font-size: 1.1rem;
     color: #333;
-
-    z-index: 999999;
 
 }
 

@@ -6,15 +6,47 @@ import $ from "jquery";
 import styles from "./styles.module.css";
 import SimpleTable from "../../../components/SimpleTable";
 
+import { useRouter } from "next/router";
+
+import { validCode } from "../../../../src/utils/validators";
+import { Modal, Button } from "react-bootstrap";
+
 export default function Binary2Decimal() {
     const [typeCode, setTypeCode] = React.useState("Binary");
     const [convertedCodes, setConvertedCodes] = React.useState([]);
+    const [showModal, setShowModal] = React.useState(false);
+    const [zIndex, setZIndex] = React.useState(999999);
+    const [message, setMessage] = React.useState("");
+
+    const router = useRouter();
 
     const changeTypeCode = () => typeCode.toLowerCase() === "binary" ? setTypeCode("Decimal") : setTypeCode("Binary");
+    const closeModal = () => {
+        setShowModal(false);
+        setTimeout(() => {
+            setZIndex(9999999);
+            $("#number-sequence").focus();
+
+        }, 300);
+
+    };
     const handleSubmit = (ev) => {
         ev.preventDefault();
 
         let binaryCode = $("#number-sequence").val();
+
+        if (validCode(typeCode.toLowerCase(), binaryCode) || (binaryCode.length === 0)) {
+            setShowModal(true);
+            setZIndex(0);
+
+            if (binaryCode.length === 0)
+                setMessage("The input is empty!!");
+            else
+                setMessage("Check your code input, maybe it contains letters, whitespace or invalid numbers!");
+
+            return;
+
+        }
 
         let results = [];
         let aux = 0;
@@ -55,7 +87,7 @@ export default function Binary2Decimal() {
             <div className={styles.containerForm}>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.containerInput} id={"code"}>
-                        <label className={styles.label} htmlFor={"number-sequence"} id={"code-label"}>{ typeCode } code</label>
+                        <label style={{ zIndex }} className={styles.label} htmlFor={"number-sequence"} id={"code-label"}>{ typeCode } code</label>
                         <input
                             name={"numberSequence"}
                             id={"number-sequence"}
@@ -70,14 +102,34 @@ export default function Binary2Decimal() {
                             <label className={"form-check-label"}>Change type code</label>
                         </div>
                     </div>
-                    <div>
+                    <div className={styles.containerButton}>
+                        <button
+                            className={`${styles.button} bg-danger`}
+                            type={"button"}
+                            onClick={() => router.back()}
+                        >Back Home</button>
                         <input className={styles.button} type={"submit"} value={"Convert"} />
                     </div>
                 </form>
             </div>
-
             <SimpleTable header={["Code Type", "Code", "Result Converted"]} data={convertedCodes} />
         </main>
+          <Modal
+              show={showModal}
+              onHide={closeModal}
+              backdrop={"static"}
+              keyboard={false}
+          >
+              <Modal.Header closeButton>
+                  <Modal.Title>Warning</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                  { message }
+              </Modal.Body>
+              <Modal.Footer>
+                  <Button onClick={closeModal}>OK</Button>
+              </Modal.Footer>
+          </Modal>
       </>
     );
 

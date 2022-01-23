@@ -8,6 +8,11 @@ html, body {
 
 }
 
+.show {
+  display: block !important;
+
+}
+
 a {
   color: inherit;
   text-decoration: none;
