@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import NoData from "../NoData";
 
-export default function SimpleTable({ header, data }) {
+export default function SimpleTable({ header=[], data=[] }) {
     return (
         <div className={styles.container}>
             <table className={styles.table}>
