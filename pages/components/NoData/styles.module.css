@@ -1,0 +1,21 @@
+.noData {
+    width: 100%;
+    text-align: center;
+
+    position: absolute;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #EEE;
+
+}
+
+.noData>p {
+    margin: 0;
+
+}

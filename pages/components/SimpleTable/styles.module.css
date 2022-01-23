@@ -1,0 +1,56 @@
+.container {
+    width: 800px;
+    margin-top: 20px;
+
+    height: 300px;
+
+    overflow-y: auto;
+
+    position: relative;
+
+}
+
+.table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+
+}
+
+.colBody {
+    background-color: #EFEFEF;
+
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 1.2rem;
+
+}
+
+.row {
+    width: 100%;
+    border: 1px solid #000;
+    border-left-width: 0;
+    border-right-width: 0;
+
+}
+
+.head {
+    background-color: #ED4834;
+
+}
+
+.col {
+    padding: 10px;
+
+    font-size: 1.3rem;
+    font-family: Calibri, sans-serif;
+    font-weight: normal;
+
+    color: #000;
+
+}
+
+.col:not(:last-child), .colBody:not(:last-child) {
+    border-right: 1px solid #EEE;
+
+}

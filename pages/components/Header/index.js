@@ -22,8 +22,6 @@ export default function Header ({ logged }) {
 
     }, []);
 
-    console.log(l)
-
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#158894" }}>

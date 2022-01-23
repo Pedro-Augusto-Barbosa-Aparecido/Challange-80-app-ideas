@@ -1,0 +1,97 @@
+.container {
+    width: 100%;
+    height: 70vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+}
+
+.containerForm {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerInput {
+    width: 450px;
+    height: 60px;
+
+    margin-top: 20px;
+
+    position: relative;
+
+}
+
+.button {
+    box-shadow: 1px 1px 5px 0 #000;
+
+    width: 100%;
+    height: 50px;
+
+    color: #222;
+
+    border-radius: 8px;
+    border: 0;
+
+    background-color: #A383A6;
+
+    margin-top: 20px;
+
+}
+
+.button:active {
+    transform: scale(.95);
+
+}
+
+.label {
+    position: absolute;
+    height: 20px;
+
+    top: -15px;
+    left: 15px;
+
+    background-color: #FFF;
+
+    padding: 0 10px;
+
+    font-family: Calibri, sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
+
+    z-index: 999999;
+
+}
+
+.containerInput>input {
+    width: 100%;
+    height: 100%;
+
+    outline: none;
+
+    border: 0;
+    border-radius: 8px;
+
+    padding: 10px;
+
+}
+
+.containerInput[id=code] {
+    border-radius: 8px;
+    border: 2px solid #7D38F5;
+
+}
+
+.containerInput[id=switch] {
+    height: fit-content;
+    margin-top: 5px;
+
+}
