@@ -14,7 +14,7 @@ export default function ContentCards () {
 
     useEffect(() => {
         async function fetchData () {
-            res.current = await axios.get(`${window.location.href}/api/cards-api`);
+            res.current = await axios.get(`${window.location.href}api/cards-api`);
             setCards(res.current.data.data);
             setTime(res.current.data.time);
 
@@ -39,13 +39,15 @@ export default function ContentCards () {
                                                 <h5 className="card-header">{ card.title }</h5>
                                                 <div className="card-body">
                                                     <h5 className="card-title">{ card.title }</h5>
-                                                    <Image
+                                                    <img
                                                         src={card.imageSRC}
-                                                        width={100} height={60}
-                                                        layout={"responsive"}
+                                                        // width={100} height={60}
+                                                        style={{ width: "100%", height: "50vh" }}
+                                                        // layout={"responsive"}
                                                         alt={card.altName}
                                                         title={card.altName}
-                                                        quality={"100"}
+                                                        // quality={"100"}
+                                                        // priority
 
                                                     />
                                                     <p className="card-text">
