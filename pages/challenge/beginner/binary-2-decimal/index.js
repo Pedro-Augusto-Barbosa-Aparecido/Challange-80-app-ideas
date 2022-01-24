@@ -17,12 +17,14 @@ export default function Binary2Decimal() {
     const [showModal, setShowModal] = React.useState(false);
     const [zIndex, setZIndex] = React.useState(999999);
     const [message, setMessage] = React.useState("");
+    const [selectAll, setSelectAll] = React.useState(false);
 
     const router = useRouter();
 
     const changeTypeCode = () => typeCode.toLowerCase() === "binary" ? setTypeCode("Decimal") : setTypeCode("Binary");
     const closeModal = () => {
         setShowModal(false);
+        setSelectAll(true);
         setTimeout(() => {
             setZIndex(9999999);
             $("#number-sequence").focus();
@@ -93,6 +95,13 @@ export default function Binary2Decimal() {
                             id={"number-sequence"}
                             type={"text"}
                             placeholder={`Enter with ${typeCode.toLowerCase()} code here...`}
+                            onFocus={(ev) => {
+                                if (selectAll)
+                                    ev.target.select();
+
+                                setSelectAll(false);
+
+                            }}
                             autoComplete={"off"}
                         />
                     </div>
